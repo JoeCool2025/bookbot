@@ -23,3 +23,16 @@ def count_book_characters(path_to_file):
             characters[char] = 1
 
     return characters
+
+def sort_character_count(characters):
+    sorted_dictionaries = []
+
+    for key in characters:
+        sorted_dictionaries.append({"name": key, "num": characters[key]})
+    
+    def sort_on(items):
+        return items["num"]
+    
+    sorted_dictionaries.sort(reverse=True, key=sort_on)
+
+    return sorted_dictionaries

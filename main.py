@@ -1,19 +1,13 @@
-def get_book_text(path_to_file):
-    file_contents = ""
+from stats import book_word_count
+from stats import count_book_characters
 
-    with open(path_to_file) as f:
-        file_contents = f.read()
-    
-    return file_contents
-
-def book_length(path_to_file):
-    book = get_book_text(path_to_file)
-    words = book.split()
-
-    return len(words)
+path_to_file = "/home/adin-admin/boot_dev/bookbot/books/frankenstein.txt"
+characters_used = count_book_characters(path_to_file)
 
 def main():
-    text = book_length("/home/adin-admin/boot_dev/bookbot/books/frankenstein.txt")
+    text = book_word_count(path_to_file)
     print(f"{text} words found in the document")
+    print(characters_used)
+
 
 main()
